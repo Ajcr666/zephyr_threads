@@ -1,0 +1,21 @@
+create a mutex "mutex" and a condition variable "cond"
+create thread1 and thread2
+thread1 function:
+     -lock mutex
+     -print "thread1"
+     -signal the condition variable "cond"
+     -unlock mutex
+     -sleep for 1 second
+     -repeat
+thread2 function:
+    -lock mutex
+    -wait for the signal from the condition variable "cond"
+    -print "thread2"
+    -unlock mutex
+    -repeat
+in the main function:
+    -initialize mutex and condition variable
+    -create thread1 and thread2
+    -join thread1 and thread2
+    -exit
+
